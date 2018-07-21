@@ -23,7 +23,7 @@ public class MailUtils1 {
 		props.setProperty("mail.host", "smtp.sohu.com");
 		props.setProperty("mail.transport.protocol", "smtp");
 		props.setProperty("mail.smtp.auth", "true");
-		//1´´½¨session
+		//1åˆ›å»ºsession
 		Session session = Session.getInstance(props);
 		session.setDebug(true);
 		Transport ts = session.getTransport();
@@ -37,12 +37,12 @@ public class MailUtils1 {
 	private static Message createsimplemail(Session session,String to,String code) throws Exception, MessagingException {
 		// TODO Auto-generated method stub
 		MimeMessage message = new MimeMessage(session);
-		message.setFrom(new InternetAddress("zengzhipeng0958@sohu.com"));
+		message.setFrom(new InternetAddress("zengzhipeng@sohu.com"));
 		message.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
-		message.setSubject("ÕËºÅ¼¤»îÓÊ¼ş");
-		//2.4ÉèÖÃÓÊ¼şµÄÕıÎÄ,µÚÒ»¸ö²ÎÊıÓÃÓÚÖ¸¶¨·¢ËÍµÄÕıÎÄÄÚÈİ£¬µÚ¶ş¸ö²ÎÊıÓÃÓÚÖ¸¶¨ÕıÎÄµÄÎÄ±¾ÀàĞÍ
-//		message.setContent("<h2>ÕâÊÇÒ»·âxxÍøÕ¾ÕËºÅ×¢²á¼¤»îÓÊ¼ş£¬È·ÈÏ¼¤»îÇëµã»÷ÒÔÏÂ³¬Á´½Ó£º</h2><h3><a href='http://localhost:8080/regist_web/ActiveServlet?code="+code+"'>http://localhost:8080/regist_web/ActiveServlet?code="+code+"</a></h3>", "text/html;charset=utf-8");
-		message.setContent("<h2>ÕâÊÇÒ»·âxxÍøÕ¾ÕËºÅ×¢²á¼¤»îÓÊ¼ş£¬È·ÈÏ¼¤»îÇëµã»÷ÒÔÏÂ³¬Á´½Ó£º</h2><h3><a href='http://172.16.29.245:8080/regist_web/Check.jsp?code="+code+"'>http://172.16.29.245:8080/regist_web/Check.jsp?code="+code+"</a></h3>", "text/html;charset=utf-8");
+		message.setSubject("è´¦å·æ¿€æ´»é‚®ä»¶");
+		//2.4è®¾ç½®é‚®ä»¶çš„æ­£æ–‡,ç¬¬ä¸€ä¸ªå‚æ•°ç”¨äºæŒ‡å®šå‘é€çš„æ­£æ–‡å†…å®¹ï¼Œç¬¬äºŒä¸ªå‚æ•°ç”¨äºæŒ‡å®šæ­£æ–‡çš„æ–‡æœ¬ç±»å‹
+//		localhostï¼š8080è¯·è‡ªè¡Œæ›¿æ¢æˆä½ çš„ipåœ°å€  message.setContent("<h2>è¿™æ˜¯ä¸€å°xxç½‘ç«™è´¦å·æ³¨å†Œæ¿€æ´»é‚®ä»¶ï¼Œç¡®è®¤æ¿€æ´»è¯·ç‚¹å‡»ä»¥ä¸‹è¶…é“¾æ¥ï¼š</h2><h3><a href='http://localhost:8080/regist_web/ActiveServlet?code="+code+"'>http://localhost:8080/regist_web/ActiveServlet?code="+code+"</a></h3>", "text/html;charset=utf-8");
+		message.setContent("<h2>è¿™æ˜¯ä¸€å°xxç½‘ç«™è´¦å·æ³¨å†Œæ¿€æ´»é‚®ä»¶ï¼Œç¡®è®¤æ¿€æ´»è¯·ç‚¹å‡»ä»¥ä¸‹è¶…é“¾æ¥ï¼š</h2><h3><a href='http://localhostï¼š8080/regist_web/Check.jsp?code="+code+"'>http://172.16.29.245:8080/regist_web/Check.jsp?code="+code+"</a></h3>", "text/html;charset=utf-8");
 		
 		
 		return message;
